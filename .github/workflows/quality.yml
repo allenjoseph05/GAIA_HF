@@ -20,7 +20,11 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           enable-cache: true
-      - run: uv sync --frozen --extra dev
+      - name: Install media system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends ffmpeg
+      - run: uv sync --frozen --extra dev --extra research --extra observability
       - run: uv run ruff check .
       - run: uv run pyright
       - run: uv run pytest -q
