@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "evaluation": "Hugging Face Agents Course Unit 4 GAIA assignment",
+  "submitted_at": "2026-08-31T13:32:03.620564+00:00",
+  "score_percent": 100.0,
+  "correct_count": 20,
+  "attempted_count": 20,
+  "candidate_sha256": "6fcea4b3fb36f3e1982e91c3f2abcd7fa95e633c89e44177fed6941cf64751f5",
+  "question_snapshot_sha256": "e03d1d62471ba7335ccd4b3e98ba2d91a187ec2744b93a21598f90e87c4ca148",
+  "space_commit": "8f3721697e8fa627558340560cdcce3d66a3d324",
+  "agent_code": "https://huggingface.co/spaces/allenjoseph/allen-gaia-agent/tree/main",
+  "contains_questions": false,
+  "contains_answers": false,
+  "contains_secrets": false
+}

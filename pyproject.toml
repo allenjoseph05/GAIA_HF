@@ -1,0 +1,86 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gaia-max"
+version = "1.0.0"
+description = "A typed, evidence-first and safety-gated GAIA agent workflow"
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+license = "Apache-2.0"
+authors = [{ name = "GAIA course learner" }]
+dependencies = [
+    "aiosqlite>=0.22,<1",
+    "chess>=1.11,<2",
+    "httpx>=0.28,<1",
+    "langgraph>=1.2.11,<2",
+    "langgraph-checkpoint-sqlite>=3.1.1,<4",
+    "openpyxl>=3.1,<4",
+    "pandas>=2.2,<4",
+    "pillow>=10,<13",
+    "pydantic>=2.12,<3",
+    "pydantic-settings>=2.12,<3",
+    "pymupdf>=1.28,<2",
+    "pypdf>=6.16,<7",
+    "python-calamine>=0.3,<1",
+]
+
+[project.optional-dependencies]
+asr = [
+    "faster-whisper>=1.2.1,<2; python_version < '3.14'",
+]
+research = [
+    "llama-index-core>=0.14.24,<0.15",
+    "llama-index-retrievers-bm25>=0.7.1,<0.8",
+    "smolagents>=1.26,<1.27",
+]
+research-local = [
+    "llama-index-embeddings-huggingface>=0.7,<0.8; python_version < '3.14'",
+]
+observability = [
+    "langfuse>=4.15,<5",
+    "opentelemetry-sdk>=1.44,<2",
+]
+space = [
+    "gradio>=5,<7",
+]
+dev = [
+    "pytest>=9,<10",
+    "pytest-asyncio>=1.3,<2",
+    "hypothesis>=6.0,<7",
+    "pyright>=1.1,<2",
+    "ruff>=0.14,<1",
+]
+
+[project.scripts]
+gaia = "gaia_max.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+
+[tool.ruff]
+exclude = [".package-test", ".runtime", ".venv", "build", "runs"]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.pyright]
+include = ["src", "app.py"]
+pythonVersion = "3.11"
+typeCheckingMode = "strict"
+reportMissingTypeStubs = false
+# LangGraph, Gradio, python-chess, and several document/media libraries expose
+# incomplete type information. Keep strict checking for our values and boundaries
+# while suppressing diagnostics that only restate missing third-party annotations.
+reportUnknownMemberType = false
+reportUnknownVariableType = false
+reportUnknownArgumentType = false
+reportUnnecessaryIsInstance = false

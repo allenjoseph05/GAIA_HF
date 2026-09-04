@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.hypothesis/
+.ruff_cache/
+.mypy_cache/
+.pyright/
+.uv-cache/
+.venv/
+venv/
+build/
+dist/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+junit.xml
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Runtime state and private benchmark artifacts
+runs/
+.runtime/
+artifacts/
+*.sqlite
+*.sqlite3
+*.db
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite3-journal
+*.sqlite3-shm
+*.sqlite3-wal
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Local installation checks
+.package-test/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
