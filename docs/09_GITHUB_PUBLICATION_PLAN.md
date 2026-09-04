@@ -1,6 +1,6 @@
 # GitHub Publication Plan
 
-Status: verified locally; remote attached; publication pending.
+Status: published and verified.
 
 ## Publication principles
 
@@ -147,6 +147,6 @@ Pytest:             PASS - 674 passed, 1 third-party Python 3.16 deprecation war
 Package build:      PASS - sdist and universal wheel built for 1.0.0
 Runtime smoke test: PASS - synthetic LangGraph run completed; submission unavailable
 Remote URL:         https://github.com/allenjoseph05/GAIA_HF
-main push:         PENDING
-v1.0.0 tag push:   PENDING
+main push:          PASS - bdf1115 published as a fast-forward
+v1.0.0 tag push:    PASS - annotated release tag published
 ```
